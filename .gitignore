@@ -1,11 +1,16 @@
-venv/
+# python
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-*.pyw
-*.pyz
-*.pywz
-*.pyzw
-*.pyzwz
-*.pyzwzw
+
+# virtual env
+venv/
+
+# datasets / cache
+.cache/
+data/
+
+# logs
+*.log
+
+# mac
+.DS_Store
