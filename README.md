@@ -24,6 +24,25 @@ Transformer는 기존 RNN/LSTM 기반 시퀀스 모델과 달리,
 
 최종 Encoder는 동일한 Encoder Layer를 여러 층 쌓은 구조이다.
 
+### Decoder 구조
+
+Transformer의 Decoder는 다음 세 가지 하위 층으로 구성된다.
+
+1. Masked Multi-Head Self-Attention  
+2. Encoder–Decoder Attention (Cross Attention)  
+3. Position-wise Feed Forward Network  
+
+첫 번째 Self-Attention에서는 미래 토큰을 보지 못하도록 causal mask를 적용하여
+현재 시점 이전의 토큰 정보만 사용할 수 있게 한다.
+
+두 번째 Attention에서는 Query는 Decoder에서,  
+Key와 Value는 Encoder 출력에서 가져와
+입력 문장과 출력 문장 간의 정렬(alignment)을 학습한다.
+
+이를 통해 Decoder는 이전에 생성된 토큰과 입력 문맥을 동시에 고려하여
+다음 토큰을 생성할 수 있다.
+
+
 ---
 
 ## 2. 왜 이러한 구조가 필요한가?
